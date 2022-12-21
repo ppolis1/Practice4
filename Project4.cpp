@@ -239,7 +239,7 @@ void newFile(string str) {
     }
 }
 
-int main4() {
+int main() {
     setlocale(LC_ALL, "RUSSIAN");
     string str;
     string substr;
