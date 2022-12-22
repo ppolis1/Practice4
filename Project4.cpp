@@ -157,7 +157,6 @@ void linesearch(string str)
     cout << "\nЛинейный поиск:" << "\n";
     cout << "Индексы:";
     string str1 = "";
-    auto start = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
     for (int i = 0; i <= str.length() - substr.length(); i++) {
         str1 = "";
         for (int j = i; j < substr.length() + i; j++) {
@@ -174,8 +173,8 @@ void linesearch(string str)
             count += 1;
         }
     }
-    auto end = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-    cout << "; Подстрока - " << strRes << "; Найдено " << count << " подстроки(ок);\t" << "Потрачено времени: " << end - start << "ns\n";
+   
+    cout << "; Подстрока - " << strRes << "; Найдено " << count << " соответствие(ий)";
     
 }
 # define NO_OF_CHARS 256
@@ -207,7 +206,7 @@ void BoyerMoores(string str)
 
     int s = 0; 
     cout << "Индексы: ";
-    auto start = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+   
     while (s <= (n - m))
     {
         int j = m-1;
@@ -226,8 +225,8 @@ void BoyerMoores(string str)
         else
             s += max(1, j - badchar[str[s + j]]);
     }
-    auto end = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-    cout << "; Найдено " << count << " подстроки(ок);\t" << "Потрачено времени: " << end - start << "ns\n";
+    
+    cout << "; Найдено " << count << " соответствие(ий)";
 }
 void newFile(string str) {
     fstream File("C:\\Users\\kotlo\\source\\repos\\ConsoleApplication8\\ConsoleApplication8\\T_new.txt", ios::out | ios::trunc);
